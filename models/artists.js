@@ -18,6 +18,7 @@ const artistSchema = new Schema({
         title: { type: String, required: false},
         sculpture_width: { type: Number, required: false},
         sculpture_length: { type: Number, required: false},
+        sculpture_depth: { type: Number, required: false},
         sculpture_img: { type: String, required: false},
         media: { type: String, required: false},
         price: { type: Number, required: false},

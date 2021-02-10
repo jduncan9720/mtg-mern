@@ -25,9 +25,14 @@
   },
   "homepage": "https://github.com/jduncan9720/mtg-mern#readme",
   "dependencies": {
+    "aws-sdk": "^2.841.0",
     "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "if-env": "^1.0.4",
-    "mongoose": "^5.11.15"
+    "mongoose": "^5.11.15",
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "react-router-dom": "^5.2.0"
   }
 }
