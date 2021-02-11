@@ -1,9 +1,24 @@
-import React from 'react'
+import React, { useState, useEffect } from "react";
+import Artistlist from "../components/Artistlist"
+import API from '../utils/API'
 
-export default function Admin() {
+function Admin() {
+const [artists, setArtists] = useState({})
+
+  useEffect(() => {
+    loadArtists()
+  }, [])
+
+  function loadArtists() {
+    API.getArtists()
+    .then(res =>
+      setArtists(res.data))
+  }
+  console.log(artists)
     return (
         <div>
-            This is the Admin page
+            <Artistlist />
         </div>
     )
 }
+export default Admin;

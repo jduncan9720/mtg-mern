@@ -8,6 +8,7 @@ import Artists from './pages/Artists'
 import Contact from './pages/Contact'
 import Events from './pages/Events'
 import Home from './pages/Home'
+import Admin from './pages/Admin'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route exact path="/artists" component={Artists} />
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/events" component={Events} />
+          <Route exact path="/admin" component={Admin} />
         </Wrapper>
       </div>
     </Router>
