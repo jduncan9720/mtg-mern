@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Artistlist from "../components/Artistlist"
+import Artistselect from "../components/Artistlist"
 import API from '../utils/API'
 
 function Admin() {
@@ -14,11 +15,25 @@ const [artists, setArtists] = useState({})
     .then(res =>
       setArtists(res.data))
   }
-  console.log(artists)
+ 
+  if (artists.length > 0) {
+      console.log(artists)
+    return (
+        <Artistlist>  
+        {artists.map(artist => (
+            <Artistselect key={artist._id}>
+                {artist.first_name}
+            </Artistselect>
+        ))} 
+        </Artistlist>
+    )
+} else {
     return (
         <div>
             <Artistlist />
         </div>
     )
 }
+}
 export default Admin;
+

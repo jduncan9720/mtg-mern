@@ -1,9 +1,19 @@
 import React from 'react'
 
-export default function Artistlist() {
+export default function Artistlist(children) {
     return (
-        <div className="form-group">
-              <h1>Artist List</h1>
-        </div>
+      <form>
+      <label>
+        Artist:
+        <select>{children}</select>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
     )
 }
+
+
+export function Artistselect(children) {
+    return  <option>{children}</option>
+}
+
