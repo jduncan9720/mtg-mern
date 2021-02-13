@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Artistlist from "../components/Artistlist"
+import Displaybox from "../components/Displaybox"
+import Imagecard from "../components/Imagecard"
 import API from '../utils/API'
 
 function Admin() {
@@ -31,12 +33,16 @@ function Admin() {
     if (artists.length > 0) {
         console.log(artists)
         return (
+            <>
             <Artistlist 
                 artists={artists} 
                 handleFormSubmit={handleFormSubmit} 
                 selectOption={selectOption}
                 />
-                
+            <Displaybox>
+                <Imagecard artists={artists} />
+            </Displaybox>
+            </>  
         )
     } else {
         return (
