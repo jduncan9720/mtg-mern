@@ -24,10 +24,8 @@ function Admin() {
 
     function selectOption(event){
         const value = event.target.value
-        // const selected = opt.options[opt.selectedIndex].value
         setSelectedOpt(value)
         console.log(value)
-        console.log(selectedOpt)
     }
 
     if (artists.length > 0) {
@@ -36,7 +34,10 @@ function Admin() {
             <Artistlist 
                 artists={artists} 
                 handleFormSubmit={handleFormSubmit} 
-                selectOption={selectOption}/>
+                selectOption={selectOption}
+                selectedOpt={selectedOpt}
+                />
+                
         )
     } else {
         return (

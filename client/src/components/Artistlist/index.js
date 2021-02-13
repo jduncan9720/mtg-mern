@@ -15,6 +15,7 @@ export default function Artistlist(props) {
           </option>
       ))}</select>
       </label>
+      <p>{props.selectedOpt}</p>
       <input onSubmit={props.handleFormSubmit} type="submit" value="Submit" />
     </form>
 
