@@ -18,7 +18,7 @@ function Admin() {
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        alert("working")
+        alert(selectedOpt)
 
     }
 
@@ -35,7 +35,6 @@ function Admin() {
                 artists={artists} 
                 handleFormSubmit={handleFormSubmit} 
                 selectOption={selectOption}
-                selectedOpt={selectedOpt}
                 />
                 
         )
