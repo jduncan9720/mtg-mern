@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Artistlist from "../components/Artistlist"
+import AddArtist from "../components/AddArtist"
 import Displaybox from "../components/Displaybox"
 import Imagecard from "../components/Imagecard"
 import API from '../utils/API'
@@ -41,6 +42,7 @@ function Admin() {
                 selectOption={selectOption}
                 selectedOpt={selectedOpt}
                 />
+            <AddArtist />
             <Displaybox>
                 <Imagecard artists={artists} />
             </Displaybox>
