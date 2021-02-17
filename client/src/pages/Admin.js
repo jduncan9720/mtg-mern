@@ -3,10 +3,11 @@ import Artistlist from "../components/Artistlist"
 import Displaybox from "../components/Displaybox"
 import Imagecard from "../components/Imagecard"
 import API from '../utils/API'
+import "../pages/style.css"
 
 function Admin() {
     const [artists, setArtists] = useState({})
-    const [selectedOpt, setSelectedOpt] = useState(0)
+    const [selectedOpt, setSelectedOpt] = useState("")
 
     useEffect(() => {
         loadArtists()
@@ -38,6 +39,7 @@ function Admin() {
                 artists={artists} 
                 handleFormSubmit={handleFormSubmit} 
                 selectOption={selectOption}
+                selectedOpt={selectedOpt}
                 />
             <Displaybox>
                 <Imagecard artists={artists} />

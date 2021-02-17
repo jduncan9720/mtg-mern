@@ -6,13 +6,14 @@ export default function Artistlist(props) {
     <form>
       <label>
         Artist:
-        <select onChange={props.selectOption}>{props.artists.map(artist => (
-        <option 
+        <select value={props.selectedOpt} onChange={props.selectOption}>
+        <option value="">Choose Artist</option>
+        {props.artists.map(artist => (
+        <option
           key={artist._id}
-          name={artist.first_name}
           value={artist._id}
-          > {artist.first_name} {artist.last_name}
-          </option>
+        > {artist.first_name} {artist.last_name}
+        </option>
       ))}</select>
       </label>
       <input onClick={props.handleFormSubmit} type="submit" value="Submit" />
