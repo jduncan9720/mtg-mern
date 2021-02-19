@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Displaybox from "../components/Displaybox"
 import Artistcards from "../components/Artistcards"
+import Container from "../components/Container"
 import API from '../utils/API'
 
 function Artists() {
@@ -18,20 +19,20 @@ function Artists() {
     if (artists.length > 0) {
         console.log(artists)
         return (
-            <>
+            <Container style={{textAlign: "center"}}>
             <h1>Gallery Artists</h1>
             <Displaybox>
                 <Artistcards artists={artists} />
             </Displaybox>
-            </>  
+            </Container>  
         )
     } else {
         return (
-            <>
+            <Container style={{textAlign: "center"}}>
             <Displaybox>
                 <Artistcards artists={[]} />
             </Displaybox>
-            </> 
+            </Container> 
         )
     }
 }

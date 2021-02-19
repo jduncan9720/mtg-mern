@@ -4,6 +4,7 @@ import AddArtist from "../components/AddArtist"
 import Displaybox from "../components/Displaybox"
 import Imagecard from "../components/Imagecard"
 import Container from "../components/Container"
+import AddArtForm from "../components/AddArtForm"
 import API from '../utils/API'
 import "../pages/style.css"
 import { Col, Row } from "react-bootstrap";
@@ -28,7 +29,7 @@ function Admin() {
 
     }
 
-    function selectOption(event){
+    function selectOption(event) {
         const value = event.target.value
         setSelectedOpt(value)
         console.log(value)
@@ -38,28 +39,29 @@ function Admin() {
         console.log(artists)
         return (
             <Container>
-            <Row>
-            <Col size="md-6">
-            <Artistlist 
-                artists={artists} 
-                handleFormSubmit={handleFormSubmit} 
-                selectOption={selectOption}
-                selectedOpt={selectedOpt}
+                <Row>
+                    <Col size="md-6">
+                        <AddArtist />
+                    </Col>
+                    <Col size="md-6">
+                        <AddArtForm />
+                    </Col>
+                </Row>
+                <Artistlist
+                    artists={artists}
+                    handleFormSubmit={handleFormSubmit}
+                    selectOption={selectOption}
+                    selectedOpt={selectedOpt}
                 />
-            </Col>
-            <Col size="md-6">
-            <AddArtist />
-            </Col>
-            </Row>
-            <Displaybox>
-                <Imagecard artists={artists} />
-            </Displaybox>
+                <Displaybox>
+                    <Imagecard artists={artists} />
+                </Displaybox>
             </Container>
         )
     } else {
         return (
             <div>
-                <Artistlist artists={[]}/>
+                <Artistlist artists={[]} />
             </div>
         )
     }

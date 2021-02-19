@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./style.css"
+import { Button, Form } from 'react-bootstrap';
 
 function AddArtist() {
     const [state, setState] = useState({
@@ -13,29 +14,25 @@ function AddArtist() {
     return (
         <div className="border border-dark p-2">
             <h1>Add an Artist</h1>
-            <form>
-                <div class="form-group">
-                    <label>First Name:</label>
-                    <input type="text" className="form-control" id="firstName" placeholder="Enter First Name" />
-                </div>
-                <div class="form-group">
-                    <label>Last Name:</label>
-                    <input type="text" className="form-control" id="lastName" placeholder="Enter Last Name" />
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" className="form-check-input" id="painter" />
-                    <label className="form-check-label">Painter</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" className="form-check-input" id="sculptor" />
-                    <label className="form-check-label">Sculptor</label>
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" className="form-check-input" id="other" />
-                    <label className="form-check-label">Other</label>
-                </div>
-                <button type="submit" className="btn btn-primary">Submit</button>
-            </form>
+            <Form>
+                <Form.Group controlId="formFirstName">
+                    <Form.Label>First Name:</Form.Label>
+                    <Form.Control type="text" placeholder="First Name..." />
+                </Form.Group>
+
+                <Form.Group controlId="formLastName">
+                    <Form.Label>Last Name:</Form.Label>
+                    <Form.Control type="text" placeholder="Last Name..." />
+                </Form.Group>
+                <Form.Group controlId="formArtistType">
+                    <Form.Check type="checkbox" label="Painter" />
+                    <Form.Check type="checkbox" label="Sculptor" />
+                    <Form.Check type="checkbox" label="Other" />
+                </Form.Group>
+                <Button variant="primary" type="submit">
+                    Submit
+                </Button>
+            </Form>
         </div>
     )
 }
