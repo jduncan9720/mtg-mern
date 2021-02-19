@@ -11,7 +11,7 @@ function AddArtist() {
         featured_image: ""
     })
     return (
-        <div className="border border-dark">
+        <div className="border border-dark p-2">
             <h1>Add an Artist</h1>
             <form>
                 <div class="form-group">

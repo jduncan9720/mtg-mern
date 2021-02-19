@@ -9,12 +9,13 @@ import Contact from './pages/Contact'
 import Events from './pages/Events'
 import Home from './pages/Home'
 import Admin from './pages/Admin'
+import { Container } from "react-bootstrap";
 
 
 function App() {
   return (
     <Router>
-      <div className="container text-center">
+      <Container>
         <Logo />
         <Navbar />
         <br />
@@ -27,7 +28,7 @@ function App() {
           <Route exact path="/events" component={Events} />
           <Route exact path="/admin" component={Admin} />
         </Wrapper>
-      </div>
+      </Container>
     </Router>
   );
 }
