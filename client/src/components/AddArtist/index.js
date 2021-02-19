@@ -29,6 +29,9 @@ function AddArtist() {
                     <Form.Check type="checkbox" label="Sculptor" />
                     <Form.Check type="checkbox" label="Other" />
                 </Form.Group>
+                <Form.Group>
+                    <Form.File id="exampleFormControlFile1" label="Add Featured Image" />
+                </Form.Group>
                 <Button variant="primary" type="submit">
                     Submit
                 </Button>

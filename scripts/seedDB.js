@@ -10,48 +10,57 @@ const artistSeed = [
   {
     first_name: "Troy",
     last_name: "Collins",
-    phone: "4068300657",
-    email: "troy@troycollins.com",
     artist_painter: true,
     artist_sculptor: false,
     artist_other: false,
     featured_image: "/images/Mountain-Home.jpg",
-    painting: {
-      title: "Mountain Home",
-      painting_width: 24,
-      painting_length: 24,
-      painting_img: "/images/Mountain-Home.jpg",
-      media: "Oil",
-      price: 6000,
-    },
-    sculpture: {
-      title: null,
-      sculpture_width: null,
-      sculpture_length: null,
-      sculpture_depth: null,
-      sculpture_img: null,
-      media: null,
-      price: null,
-    }
+    painting: [
+      {
+        title: "Mountain Home",
+        painting_width: 24,
+        painting_length: 24,
+        painting_img: "/images/Mountain-Home.jpg",
+        media: "Oil",
+        price: 6000,
+      },
+      {
+        title: "Mountain Valley",
+        painting_width: 24,
+        painting_length: 24,
+        painting_img: "/images/Mountain-Home.jpg",
+        media: "Oil",
+        price: 6000,
+      },
+    ],
+    sculpture: [
+      {
+        title: null,
+        sculpture_width: null,
+        sculpture_length: null,
+        sculpture_depth: null,
+        sculpture_img: null,
+        media: null,
+        price: null,
+      }
+    ]
   },
   {
     first_name: "Simon",
     last_name: "Winegar",
-    phone: "8012984802",
-    email: "simon@winegar.com",
     artist_painter: true,
     artist_sculptor: true,
     artist_other: false,
     featured_image: "/images/Showoffs.jpg",
-    painting: {
+    painting: [{
       title: "Showoffs",
       painting_width: 24,
       painting_length: 36,
       painting_img: "/images/Showoffs.jpg",
       media: "Oil",
       price: 5000,
-    },
-    sculpture: {
+    }
+    ],
+    sculpture: [{
       title: "Moose",
       sculpture_width: 12,
       sculpture_length: 24,
@@ -59,26 +68,24 @@ const artistSeed = [
       sculpture_img: "/images/Moose.jpg",
       media: "Bronze",
       price: "3800",
-    }
+    }]
   },
   {
     first_name: "Bryce",
     last_name: "Pettit",
-    phone: "9709469544",
-    email: "bryce@pettit.com",
     artist_painter: false,
     artist_sculptor: true,
     artist_other: false,
     featured_image: "/images/Critical-Angle.jpg",
-    painting: {
+    painting: [{
       title: null,
       painting_width: null,
       painting_length: null,
       painting_img: null,
       media: null,
       price: null,
-    },
-    sculpture: {
+    }],
+    sculpture: [{
       title: "Critical Angle",
       sculpture_width: 20,
       sculpture_length: 36,
@@ -86,7 +93,7 @@ const artistSeed = [
       sculpture_img: "/images/Critical-Angle.jpg",
       media: "Bronze",
       price: "15000",
-    }
+    }]
   }
 ];
 

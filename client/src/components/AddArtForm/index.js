@@ -36,9 +36,9 @@ export default function AddArtForm() {
                     <Form.Control type="number" placeholder="Price" />
                 </Form.Group>
                 <Form.Group>
-                    <Form.File id="exampleFormControlFile1" label="Example file input" />
+                    <Form.File id="exampleFormControlFile1" label="Add Image File" />
                 </Form.Group>
-                <Form.Group controlId="formArtistType">
+                <Form.Group controlId="formNewRelease">
                     <Form.Check type="checkbox" label="Add to New Releases?" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
