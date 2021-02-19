@@ -5,3 +5,13 @@
     justify-content: center;
 
 }
+
+.artimg {
+    height: 200px;
+    width: auto;
+    margin-top: 10px;
+}
+
+.card-title {
+    margin-bottom: 0;
+}

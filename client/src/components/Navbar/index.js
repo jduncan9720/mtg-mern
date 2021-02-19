@@ -8,8 +8,15 @@ export default function index() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="m-auto">
-                    <Link>
-                        <a className="nav-link" href='tel4356158748'>(435) 615-8748</a>
+                    <Link
+                        to="/admin"
+                        className={
+                            window.location.pathname === "/admin"
+                                ? "nav-link active"
+                                : "nav-link"
+                        }
+                    >
+                        ADMIN
                     </Link>
                     <Link
                         to="/artists"
