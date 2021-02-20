@@ -44,15 +44,16 @@ function Admin() {
                         <AddArtist />
                     </Col>
                     <Col size="md-6">
-                        <AddArtForm />
+                        <AddArtForm>
+                            <Artistlist
+                                artists={artists}
+                                handleFormSubmit={handleFormSubmit}
+                                selectOption={selectOption}
+                                selectedOpt={selectedOpt}
+                            />
+                        </AddArtForm>
                     </Col>
                 </Row>
-                <Artistlist
-                    artists={artists}
-                    handleFormSubmit={handleFormSubmit}
-                    selectOption={selectOption}
-                    selectedOpt={selectedOpt}
-                />
                 <Displaybox>
                     <Imagecard artists={artists} />
                 </Displaybox>

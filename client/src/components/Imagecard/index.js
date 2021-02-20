@@ -7,11 +7,11 @@ export default function Imagecard(props) {
         {
             props.artists.map(artist => (
                 <div className="card">
-                    <img className="card-img-top" src={artist.painting[0].painting_img} alt="Artwork" />
+                    <img className="card-img-top" src={artist.artwork[0].image} alt="Artwork" />
                     <div className="card-body">
-                        <h5 className="card-title">{artist.painting[0].title}</h5>
-                        <p className="card-text">{artist.painting[0].price}</p>
-                        <p className="card-text">{artist.painting[0].painting_length} x {artist.painting[0].painting_width}</p>
+                        <h5 className="card-title">{artist.artwork[0].title}</h5>
+                        <p className="card-text">{artist.artwork[0].price}</p>
+                        <p className="card-text">{artist.artwork[0].width} x {artist.artwork[0].length}</p>
                         <a href="#" className="btn btn-primary">Go somewhere</a>
                     </div>
                 </div>

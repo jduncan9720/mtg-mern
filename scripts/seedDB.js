@@ -14,33 +14,28 @@ const artistSeed = [
     artist_sculptor: false,
     artist_other: false,
     featured_image: "/images/Mountain-Home.jpg",
-    painting: [
+    artwork: [
       {
+        type: "painting",
         title: "Mountain Home",
-        painting_width: 24,
-        painting_length: 24,
-        painting_img: "/images/Mountain-Home.jpg",
+        width: 24,
+        length: 24,
+        depth: 0,
+        image: "/images/Mountain-Home.jpg",
         media: "Oil",
         price: 6000,
+        newRelease: "false"
       },
       {
-        title: "Mountain Valley",
-        painting_width: 24,
-        painting_length: 24,
-        painting_img: "/images/Mountain-Home.jpg",
+        type: "painting",
+        title: "Mountain Cabin",
+        width: 20,
+        length: 26,
+        depth: 0,
+        image: "/images/Mountain-Home.jpg",
         media: "Oil",
-        price: 6000,
-      },
-    ],
-    sculpture: [
-      {
-        title: null,
-        sculpture_width: null,
-        sculpture_length: null,
-        sculpture_depth: null,
-        sculpture_img: null,
-        media: null,
-        price: null,
+        price: 9000,
+        newRelease: "false"
       }
     ]
   },
@@ -51,24 +46,30 @@ const artistSeed = [
     artist_sculptor: true,
     artist_other: false,
     featured_image: "/images/Showoffs.jpg",
-    painting: [{
-      title: "Showoffs",
-      painting_width: 24,
-      painting_length: 36,
-      painting_img: "/images/Showoffs.jpg",
-      media: "Oil",
-      price: 5000,
-    }
-    ],
-    sculpture: [{
-      title: "Moose",
-      sculpture_width: 12,
-      sculpture_length: 24,
-      sculpture_depth: 10,
-      sculpture_img: "/images/Moose.jpg",
-      media: "Bronze",
-      price: "3800",
-    }]
+    artwork: [
+      {
+        type: "sculpture",
+        title: "Moose",
+        width: 12,
+        length: 24,
+        depth: 10,
+        image: "/images/Moose.jpg",
+        media: "Bronze",
+        price: 3800,
+        newRelease: "true"
+      },
+      {
+        type: "painting",
+        title: "Showoffs",
+        width: 24,
+        plength: 36,
+        depth: 0,
+        image: "/images/Showoffs.jpg",
+        media: "Oil",
+        price: 5000,
+        newRelease: "false"
+      }
+    ]
   },
   {
     first_name: "Bryce",
@@ -77,23 +78,19 @@ const artistSeed = [
     artist_sculptor: true,
     artist_other: false,
     featured_image: "/images/Critical-Angle.jpg",
-    painting: [{
-      title: null,
-      painting_width: null,
-      painting_length: null,
-      painting_img: null,
-      media: null,
-      price: null,
-    }],
-    sculpture: [{
-      title: "Critical Angle",
-      sculpture_width: 20,
-      sculpture_length: 36,
-      sculpture_depth: 12,
-      sculpture_img: "/images/Critical-Angle.jpg",
-      media: "Bronze",
-      price: "15000",
-    }]
+    artwork: [
+      {
+        type: "sculpture",
+        title: "Critical Angle",
+        width: 20,
+        length: 36,
+        depth: 12,
+        image: "/images/Critical-Angle.jpg",
+        media: "Bronze",
+        price: "15000",
+        newRelease: "true"
+      }
+    ]
   }
 ];
 

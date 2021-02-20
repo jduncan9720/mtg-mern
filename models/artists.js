@@ -8,23 +8,19 @@ const artistSchema = new Schema({
     artist_sculptor: { type: Boolean, required: false},
     artist_other: { type: Boolean, required: false},
     featured_image: { type: String, required: false},
-    painting:[{
+    artwork:[
+        {
+        type: { type: String, required: false},
         title: { type: String, required: false},
-        painting_width: { type: Number, required: false},
-        painting_length: { type: Number, required: false},
-        painting_img: { type: String, required: false},
+        width: { type: Number, required: false},
+        length: { type: Number, required: false},
+        depth: { type: Number, required: false},
+        image: { type: String, required: false},
         media: { type: String, required: false},
         price: { type: Number, required: false},
-    }],
-    sculpture:[{
-        title: { type: String, required: false},
-        sculpture_width: { type: Number, required: false},
-        sculpture_length: { type: Number, required: false},
-        sculpture_depth: { type: Number, required: false},
-        sculpture_img: { type: String, required: false},
-        media: { type: String, required: false},
-        price: { type: Number, required: false},
-    }]
+        newRelease: { type: Boolean, required: false}
+        }   
+]
 });
 
 const Artist = mongoose.model("Artist", artistSchema);

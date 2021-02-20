@@ -2,38 +2,77 @@ import React, { useState } from "react";
 import "./style.css"
 import { Button, Form } from 'react-bootstrap';
 
-export default function AddArtForm() {
+export default function AddArtForm(props) {
+    const [state, setState] = useState({
+        _id: "",
+        type: "",
+        title: "",
+        width: 0,
+        length: 0,
+        depth: 0,
+        image: "",
+        media: "",
+        price: "",
+        newRelease: "false",
+    })
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log("Handling")
+        console.log(state)
+        setState({...state})
+    };
+
+    const handleChange = (event) => {
+        setState({...state, [event.target.name]: event.target.value })
+        console.log(state)
+    };
+
     return (
         <div className="border border-dark p-2">
             <h1>Add Artwork</h1>
             <Form>
+                {props.children}
                 <Form.Group controlId="exampleForm.ControlSelect1">
-                    <Form.Label>Example select</Form.Label>
-                    <Form.Control as="select">
-                        <option>Painting</option>
-                        <option>Sculpture</option>
-                        <option>Other</option>
+                    <Form.Label>Artwork Type</Form.Label>
+                    <Form.Control onChange={(e) => handleChange(e)} name="type" value={state.type} as="select">
+                        <option>Select One...</option>
+                        <option value="painting">Painting</option>
+                        <option value="sculpture">Sculpture</option>
+                        <option value="other">Other</option>
                     </Form.Control>
                 </Form.Group>
                 <Form.Group controlId="formTitle">
                     <Form.Label>Artwork Title:</Form.Label>
-                    <Form.Control type="text" placeholder="Title" />
-                </Form.Group>
-                <Form.Group controlId="formHeight">
-                    <Form.Label>Height:</Form.Label>
-                    <Form.Control type="number" placeholder="Height" />
+                    <Form.Control onChange={(e) => handleChange(e)} name="title" value={state.title} type="text" placeholder="Title" />
                 </Form.Group>
                 <Form.Group controlId="formWidth">
                     <Form.Label>Width:</Form.Label>
-                    <Form.Control type="number" placeholder="Width" />
+                    <Form.Control onChange={(e) => handleChange(e)} name="width" value={state.width} type="number" placeholder="Height" />
+                </Form.Group>
+                <Form.Group controlId="formLength">
+                    <Form.Label>Length:</Form.Label>
+                    <Form.Control onChange={(e) => handleChange(e)} name="length" value={state.length} type="number" placeholder="Length" />
                 </Form.Group>
                 <Form.Group controlId="formDepth">
                     <Form.Label>Depth:</Form.Label>
-                    <Form.Control type="number" placeholder="Depth" />
+                    <Form.Control onChange={(e) => handleChange(e)} name="depth" value={state.depth} type="number" placeholder="Depth" />
                 </Form.Group>
                 <Form.Group controlId="formPrice">
                     <Form.Label>Price:</Form.Label>
-                    <Form.Control type="number" placeholder="Price" />
+                    <Form.Control onChange={(e) => handleChange(e)} name="price" value={state.price} type="number" placeholder="Price" />
+                </Form.Group>
+                <Form.Group controlId="exampleForm.ControlSelect2">
+                    <Form.Label>Media Type:</Form.Label>
+                    <Form.Control onChange={(e) => handleChange(e)} name="media" value={state.media} as="select">
+                        <option>Select One...</option>
+                        <option value="Oil">Oil</option>
+                        <option value="Acrylic">Acrylic</option>
+                        <option value="Watercolor">Watercolor</option>
+                        <option value="Bronze">Bronze</option>
+                        <option value="Mixed Media">Mixed Media</option>
+                        <option value="Other">Other</option>
+                    </Form.Control>
                 </Form.Group>
                 <Form.Group>
                     <Form.File id="exampleFormControlFile1" label="Add Image File" />
@@ -41,7 +80,7 @@ export default function AddArtForm() {
                 <Form.Group controlId="formNewRelease">
                     <Form.Check type="checkbox" label="Add to New Releases?" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button onClick={(e) => handleSubmit(e)} variant="primary" type="button">
                     Submit
                 </Button>
             </Form>
