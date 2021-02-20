@@ -4,7 +4,7 @@ import { Button, Form } from 'react-bootstrap';
 
 export default function AddArtForm(props) {
     const [state, setState] = useState({
-        _id: "",
+        artist_id: "",
         type: "",
         title: "",
         width: 0,
@@ -13,18 +13,24 @@ export default function AddArtForm(props) {
         image: "",
         media: "",
         price: "",
-        newRelease: "false",
+        newRelease: false,
     })
 
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log("Handling")
+        const newRelease = document.getElementById("newClick").checked
+        setState({...state, newRelease})
         console.log(state)
-        setState({...state})
     };
 
     const handleChange = (event) => {
         setState({...state, [event.target.name]: event.target.value })
+        console.log(state)
+    };
+
+    const artistChange = (event) => {
+        setState({...state, [event.target.key]: event.target.value })
         console.log(state)
     };
 
@@ -78,7 +84,7 @@ export default function AddArtForm(props) {
                     <Form.File id="exampleFormControlFile1" label="Add Image File" />
                 </Form.Group>
                 <Form.Group controlId="formNewRelease">
-                    <Form.Check type="checkbox" label="Add to New Releases?" />
+                    <Form.Check id="newClick" type="checkbox" label="Add to New Releases?" />
                 </Form.Group>
                 <Button onClick={(e) => handleSubmit(e)} variant="primary" type="button">
                     Submit

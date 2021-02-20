@@ -49,9 +49,9 @@ function AddArtist() {
                     <Form.Check id="sculptor" type="checkbox" label="Sculptor" />
                     <Form.Check id="other" type="checkbox" label="Other" />
                 </Form.Group>
-                {/* <Form.Group>
+                <Form.Group>
                     <Form.File id="exampleFormControlFile1" label="Add Featured Image" />
-                </Form.Group> */}
+                </Form.Group>
                 <Button onClick={(e) => handleSubmit(e)} variant="primary" type="button">
                     Submit
                 </Button>
