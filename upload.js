@@ -1,4 +1,4 @@
-require("dotenv").config
+require("dotenv").config()
 const express = require('express');
 const app = express();
 const AWS = require('aws-sdk');
@@ -24,5 +24,9 @@ const uploadFile = multer({
       }
     })
   });
+
+//   app.post('/', uploadFile.single('painting_filename'),(req, res) => {
+//     console.log(req.file);
+//   });
 
 module.exports = uploadFile;

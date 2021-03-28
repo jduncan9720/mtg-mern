@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./style.css"
 import { Button, Form } from 'react-bootstrap';
 
+
 export default function AddArtForm(props) {
     const [state, setState] = useState({
         artist_id: "",
@@ -22,6 +23,7 @@ export default function AddArtForm(props) {
         const newRelease = document.getElementById("newClick").checked
         setState({...state, newRelease})
         console.log(state)
+        // uploadFile(state.image) need to pass info to aws
     };
 
     const handleChange = (event) => {

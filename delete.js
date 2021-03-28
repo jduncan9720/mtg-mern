@@ -2,14 +2,20 @@ const express = require('express');
 const app = express();
 const AWS = require('aws-sdk');
 
+const ID = 'AKIAJXPH3N6A4O5A3N3A';
+const SECRET = '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';
+
+// The name of the bucket that you have created
+const BUCKET_NAME = 'mtgartworkbucket';
+
 const s3 = new AWS.S3({
-    accessKeyId: process.env.ID,
-    secretAccessKey: process.env.SECRET
+    accessKeyId: ID,
+    secretAccessKey: SECRET
 });
 
 const deleteFile = (path) => {
     var params = {
-        Bucket: process.env.BUCKET_NAME,
+        Bucket: BUCKET_NAME,
         Key: path
     };
 

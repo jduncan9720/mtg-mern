@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Artistlist(props) {
   console.log(props)
+
+  
   return (
     <label>
       Artist:
