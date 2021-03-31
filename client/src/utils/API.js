@@ -18,7 +18,7 @@ export default {
     return axios.post("/api/artists", ArtistsData);
   },
   //Saves painting info to artist by artist id
-  saveArt: function(artData){
-    return axios.post("/api/artists/art", artData)
+  saveArt: function(artData, id){
+    return axios.patch("/api/artists/art" + id, artData)
   }
 };

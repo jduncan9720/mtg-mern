@@ -1,12 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./style.css"
 import { Button, Form } from 'react-bootstrap';
 import Artistlist from "../Artistlist";
+import API from "../../utils/API";
 
 
 export default function AddArtForm(props) {
+    const [selectedOpt, setSelectedOpt] = useState("")
     const [state, setState] = useState({
-        artist_id: "",
         type: "",
         title: "",
         width: 0,
@@ -18,22 +19,25 @@ export default function AddArtForm(props) {
         newRelease: false
     })
 
+    function selectOption(event) {
+        const value = event.target.value;
+        setSelectedOpt(value);
+        console.log(value);
+    }
     const handleSubmit = (event) => {
         event.stopPropagation()
         const newRelease = document.getElementById("new_Release").checked
-        setState({...state, newRelease})
-        console.log("Handling")
-        console.log("finalstate", state)
+        setState({ ...state, newRelease })
+        API.saveArt({ ...state }, selectedOpt )
+            .then(res => {
+                console.log(res)
+            })
+        console.log(state)
         // uploadFile(state.image) need to pass info to aws
     };
 
     const handleChange = (event) => {
-        setState({...state, [event.target.name]: event.target.value })
-        // console.log(state)
-    };
-
-    const artistChange = (event) => {
-        setState({...state, [event.target.key]: event.target.value })
+        setState({ ...state, [event.target.name]: event.target.value })
         console.log(state)
     };
 
@@ -41,8 +45,12 @@ export default function AddArtForm(props) {
         <div className="border border-dark p-2">
             <h1>Add Artwork</h1>
             <Form>
-                <Artistlist />
-                {console.log("artist selected", )}
+                <Artistlist
+                    artists={props.artists}
+                    // handleFormSubmit={handleFormSubmit}
+                    selectOption={selectOption}
+                    selectedOpt={selectedOpt}
+                />
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Artwork Type</Form.Label>
                     <Form.Control onChange={(e) => handleChange(e)} name="type" value={state.type} as="select">
@@ -88,7 +96,7 @@ export default function AddArtForm(props) {
                     <Form.File id="exampleFormControlFile1" label="Add Image File" />
                 </Form.Group>
                 <Form.Group controlId="exampleForm.ControlSelect3">
-                <Form.Check id="new_Release" type="checkbox" label="New Release" />
+                    <Form.Check id="new_Release" type="checkbox" label="New Release" />
                 </Form.Group>
                 <Button onClick={(e) => handleSubmit(e)} variant="primary" type="button">
                     Submit

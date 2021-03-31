@@ -33,7 +33,7 @@ function Admin() {
                         <AddArtist />
                     </Col>
                     <Col size="md-6">
-                        <AddArtForm />
+                        <AddArtForm artists={artists}/>
                     </Col>
                 </Row>
                 <Displaybox>
