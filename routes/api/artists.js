@@ -16,7 +16,8 @@ router
 
 // Matches with "/api/artists/art/:id"
 router
-  .route("/art/:id", uploadFile.single('art_filename'))
-  .post(artistsController.addArtById)
+  // .route("/art/:id", uploadFile.single('art_filename'))
+  .route("/art/:id")
+  .patch(artistsController.addArtById)
 
 module.exports = router;

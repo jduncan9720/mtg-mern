@@ -10,29 +10,18 @@ import "../pages/style.css"
 import { Col, Row } from "react-bootstrap";
 
 function Admin() {
-    const [artists, setArtists] = useState({})
-    const [selectedOpt, setSelectedOpt] = useState("")
+    const [artists, setArtists] = useState({});
 
     useEffect(() => {
-        loadArtists()
-    }, [])
-
-    function loadArtists() {
-        API.getArtists()
-            .then(res =>
-                setArtists(res.data))
-    }
+        loadArtists();
+      }, []);
+    
+      function loadArtists() {
+        API.getArtists().then((res) => setArtists(res.data));
+      }
 
     function handleFormSubmit(event) {
         event.preventDefault();
-        alert(selectedOpt)
-
-    }
-
-    function selectOption(event) {
-        const value = event.target.value
-        setSelectedOpt(value)
-        console.log(value)
     }
 
     if (artists.length > 0) {
@@ -44,14 +33,7 @@ function Admin() {
                         <AddArtist />
                     </Col>
                     <Col size="md-6">
-                        <AddArtForm>
-                            <Artistlist
-                                artists={artists}
-                                handleFormSubmit={handleFormSubmit}
-                                selectOption={selectOption}
-                                selectedOpt={selectedOpt}
-                            />
-                        </AddArtForm>
+                        <AddArtForm />
                     </Col>
                 </Row>
                 <Displaybox>

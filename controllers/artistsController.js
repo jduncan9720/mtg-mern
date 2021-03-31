@@ -35,7 +35,7 @@ module.exports = {
   },
   addArtById: function(req, res) {
     db.Artist
-    .findOneAndUpdate({ _id: req.params.id }, req.body)
+    .findOneAndUpdate({ _id: req.params.id }, {$push: { artwork: req.body } } )
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
   },

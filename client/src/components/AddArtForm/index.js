@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./style.css"
 import { Button, Form } from 'react-bootstrap';
+import Artistlist from "../Artistlist";
 
 
 export default function AddArtForm(props) {
@@ -14,21 +15,21 @@ export default function AddArtForm(props) {
         image: "",
         media: "",
         price: "",
-        newRelease: false,
+        newRelease: false
     })
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log("Handling")
-        const newRelease = document.getElementById("newClick").checked
+        event.stopPropagation()
+        const newRelease = document.getElementById("new_Release").checked
         setState({...state, newRelease})
-        console.log(state)
+        console.log("Handling")
+        console.log("finalstate", state)
         // uploadFile(state.image) need to pass info to aws
     };
 
     const handleChange = (event) => {
         setState({...state, [event.target.name]: event.target.value })
-        console.log(state)
+        // console.log(state)
     };
 
     const artistChange = (event) => {
@@ -40,7 +41,8 @@ export default function AddArtForm(props) {
         <div className="border border-dark p-2">
             <h1>Add Artwork</h1>
             <Form>
-                {props.children}
+                <Artistlist />
+                {console.log("artist selected", )}
                 <Form.Group controlId="exampleForm.ControlSelect1">
                     <Form.Label>Artwork Type</Form.Label>
                     <Form.Control onChange={(e) => handleChange(e)} name="type" value={state.type} as="select">
@@ -85,8 +87,8 @@ export default function AddArtForm(props) {
                 <Form.Group>
                     <Form.File id="exampleFormControlFile1" label="Add Image File" />
                 </Form.Group>
-                <Form.Group controlId="formNewRelease">
-                    <Form.Check id="newClick" type="checkbox" label="Add to New Releases?" />
+                <Form.Group controlId="exampleForm.ControlSelect3">
+                <Form.Check id="new_Release" type="checkbox" label="New Release" />
                 </Form.Group>
                 <Button onClick={(e) => handleSubmit(e)} variant="primary" type="button">
                     Submit

@@ -14,7 +14,6 @@ function AddArtist() {
     })
 
     const handleSubmit = (event) => {
-        console.log("hello")
         event.preventDefault()
         const artist_painter = document.getElementById("painter").checked
         const artist_sculptor = document.getElementById("sculptor").checked

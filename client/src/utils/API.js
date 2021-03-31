@@ -15,6 +15,10 @@ export default {
   },
   // Saves a Artists to the database
   saveArtists: function(ArtistsData) {
-    return axios.post("/Api/artists", ArtistsData);
+    return axios.post("/api/artists", ArtistsData);
+  },
+  //Saves painting info to artist by artist id
+  saveArt: function(artData){
+    return axios.post("/api/artists/art", artData)
   }
 };
