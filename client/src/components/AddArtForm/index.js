@@ -25,7 +25,7 @@ export default function AddArtForm(props) {
         console.log(value);
     }
     const handleSubmit = (event) => {
-        event.stopPropagation()
+        event.preventDefault()
         const newRelease = document.getElementById("new_Release").checked
         setState({ ...state, newRelease })
         API.saveArt({ ...state }, selectedOpt )
